@@ -4,7 +4,8 @@
     "version"      : "1.001001",
     "description"  : "Extra features on top of the default ::Mojo renderer for Bailador",
     "depends"      : [
-        "Bailador"
+        "Bailador",
+        "Template::Mojo"
     ],
     "test-depends" : [ "Test" ],
     "provides"     : {
