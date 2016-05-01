@@ -72,7 +72,7 @@ If unspecified, layout defaults to `views/default.tt`
 Instead of exlicitly asking for passed parameters in your templates,
 they are available in `$s` Hash (`%s` Hash is also available and is the same).
 Template parameters are passed as named arguments to `template` Bailador
-subroutine. Positional parameters are available as well under C<pos> key
+subroutine. Positional parameters are available as well under `pos` key
 in the `$s` Hash.
 
 ```perl6
