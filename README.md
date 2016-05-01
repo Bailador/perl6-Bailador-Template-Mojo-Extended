@@ -38,11 +38,11 @@ You can use base templates into which to include your regular templates:
 
     # views/layouts/default.tt
     <h1>This is HTML layout</h1>
-    <%= $s<content> %>
+    <%= $_content %>
 
     # views/layouts/email.tt
     <h1>This is EMAIL layout</h1>
-    <%= $s<content> %>
+    <%= $_content %>
 
     # views/index.tt
     <p>Foo</p>
@@ -65,24 +65,22 @@ directory. They are set by either providing `:layout` named
 parameter to `template` Bailador sub or by using `%% layout:`
 at the start of the template.
 
-Inside your layout, `$s<content>` variable contains the content
+Inside your layout, `$_content` variable contains the content
 of the template you're trying to render.
 
 If unspecified, layout defaults to `views/default.tt`
 
 ## Stash Variables
 
-Instead of exlicitly asking for passed parameters in your templates,
-they are available in `$s` Hash (`%s` Hash is also available and is the same).
-Template parameters are passed as named arguments to `template` Bailador
-subroutine. Positional parameters are available as well under `pos` key
-in the `$s` Hash.
+Instead of explicitly asking for passed parameters in your templates, as is
+the way plain `::Mojo` is implemented, named arguments to `template` become
+scalar variables and positional arguments are available in array `@pos`:
 
 ```perl6
     get '/foo' => sub { template 'index.tt', 'Znet', :name<Zoffix> }
 
     # In views/index.tt:
-    <p>My name is <% $s<name> ~ ' ' ~ $s<pos>[0] %></p>
+    <p>My name is <% $name ~ ' ' ~ @pos[0] %></p>
 
     # Results in:
     # <p>My name is Zoffix Znet</p>
@@ -103,8 +101,8 @@ itself:
     <p>Hello, World!</p>
 
     # in views/layouts/email.tt
-    <title><%= $s<title> %></title>
-    <%= $s<content> %>
+    <title><%= $title %></title>
+    <%= $_content %>
 
 The stash variables provided in the template can be overriden by providing those
 stash variables in the `template` call, thus your templates can specify default values.
