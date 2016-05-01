@@ -5,6 +5,7 @@
     "description"  : "Extra features on top of the default ::Mojo renderer for Bailador",
     "depends"      : [
         "Bailador",
+        "Bailador::Template",
         "Template::Mojo"
     ],
     "test-depends" : [ "Test" ],
