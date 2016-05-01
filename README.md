@@ -99,7 +99,7 @@ itself:
     %% title: Foo Bar Baz
     <p>Hello, World!</p>
 
-    # in vies/layouts/email.tt
+    # in views/layouts/email.tt
     <title><%= $s<title> %></title>
     <%= $s<content> %>
 
