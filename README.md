@@ -65,6 +65,9 @@ directory. They are set by either providing `:layout` named
 parameter to `template` Bailador sub or by using `%% layout:`
 at the start of the template.
 
+Inside your layout, `$s<content>` variable contains the content
+of the template you're trying to render.
+
 If unspecified, layout defaults to `views/default.tt`
 
 ## Stash Variables
