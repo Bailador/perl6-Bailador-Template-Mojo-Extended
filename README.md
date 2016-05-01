@@ -60,6 +60,7 @@ usage details. This module makes these modifications:
 
 You can use base templates into which to include your regular templates:
 
+```perl6
     # views/layouts/default.tt
     <h1>This is HTML layout</h1>
     <%= $_content %>
@@ -82,6 +83,7 @@ You can use base templates into which to include your regular templates:
     # email template results in
     # <h1>This is EMAIL layout</h1>
     # <p>Bar</p>
+```
 
 See `examples/` directory for a working version of this sort of
 set up. The layout templates are located in `views/layouts/`
