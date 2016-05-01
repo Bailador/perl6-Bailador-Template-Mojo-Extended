@@ -39,7 +39,7 @@ method render ($template is copy, *@params, *%params) {
     die "Unable to find or read layout `$layout-file`"
         unless .r and .f given $layout-file;
 
-    %vars<_content> = Template::Mojo.new($param-str ~ $template)
+    %vars<_content> = Template::Mojo.new($param-str ~ $template.chomp)
         .render: %vars;
 
     return Template::Mojo.new($param-str ~ $layout-file.slurp)
