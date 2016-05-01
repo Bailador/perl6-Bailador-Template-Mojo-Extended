@@ -5,11 +5,35 @@ Bailador::Template::Mojo::Extended
 # SYNOPSIS
 
 ```perl6
+
+# in app.p6
 use Bailador;
 use Bailador::Template::Mojo::Extended;
 
 renderer Bailador::Template::Mojo::Extended.new;
 
+get '/' => sub { template 'index.tt', 'Zoffix', :name<Znet> }
+
+# in views/layouts/default.tt
+<!DOCTYPE html>
+<title><%= $title %></title>
+<div id="container">
+    <%= $_content %>
+</div>
+<footer>Copyright (c) 2016</footer>
+
+# in views/index.tt
+%% title: Hello, World!
+%% adjective: Awesome
+<p><%= @pos[0] ~ ' ' ~ $name %> is <%= $adjective %>
+
+# visit http://localhost:3000/ and get this:
+<!DOCTYPE html>
+<title>Hello, World!</title>
+<div id="container">
+    <p>Zoffix Znet is Awesome
+</div>
+<footer>Copyright (c) 2016</footer>
 ```
 
 # DESCRIPTION
