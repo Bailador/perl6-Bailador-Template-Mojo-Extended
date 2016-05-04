@@ -2,6 +2,12 @@
 
 Bailador::Template::Mojo::Extended
 
+# DO NOT USE
+
+WARNING: do not use this module. It currently has broken design that prevents template caching and the API will change.
+
+Check back soon!
+
 # SYNOPSIS
 
 ```perl6
