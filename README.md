@@ -4,7 +4,7 @@ Bailador::Template::Mojo::Extended
 
 # DO NOT USE
 
-**WARNING:** do not use this module. It currently has broken design that prevents template caching and the API will change.
+**WARNING:** do not use this module. It currently has broken design that prevents template caching and the API will change, to address that issue.
 
 Check back soon!
 
